@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -16,7 +16,7 @@ h1, h2 {
 /* header styles */
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -39,6 +39,18 @@ section p, h4 {
 
 section ul {
   margin-top: 0;
+}
+
+video {
+  width: 100%;
+}
+
+.buttonHolder {
+  text-align: center;
+}
+
+input {
+  width: 40%;
 }
 
 h2 {

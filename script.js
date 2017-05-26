@@ -51,10 +51,12 @@ function clearHeader() {
   var spellNamePrev = document.querySelector('h1');
   var championNamePrev = document.querySelector('h4');
   var spellDescriptionPrev = document.querySelector('p');
+  var videoPrev = document.querySelector('video');
   console.log(spellNamePrev);
   spellNamePrev.remove();
   championNamePrev.remove();
   spellDescriptionPrev.remove();
+  videoPrev.remove();
 }
 
 /*
@@ -74,6 +76,42 @@ function populateHeader(jsonObj) {
   var ran_key = obj_keys[Math.floor(Math.random() *obj_keys.length)];
   myH1.textContent = jsonObj['data'][ran_key]['spells'][spellSelector]['name'];
   header.appendChild(myH1);
+  console.log(jsonObj['data'][ran_key]['id']);
+  var ranId = jsonObj['data'][ran_key]['id'];
+  function FormatNumberLength(num, length) {
+    var r = "" + num;
+    while (r.length < length) {
+        r = "0" + r;
+    }
+    return r;
+  };
+  ranId = FormatNumberLength(ranId, 4);
+  console.log(ranId);
+  function converter(spellNumber) {
+    if (spellNumber == 0) {
+      var s = 'Q';
+      return s;
+    } else if (spellNumber == 1) {
+      var s = 'W';
+      return s;
+    } else if (spellNumber == 2) {
+      var s = 'E';
+      return s;
+    } else if (spellNumber == 3) {
+      var s = 'R';
+      return s;
+    } else {
+      console.log(error);
+    }
+  }
+  var spellKey = converter(spellSelector);
+  var myVideo = document.createElement('video');
+  myVideo.src = 'https://d28xe8vt774jo5.cloudfront.net/champion-abilities/' + ranId + '/ability_' + ranId + '_' + spellKey + '1.webm';
+  //myVideo.src = 'https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0240/ability_0240_R1.webm';
+  myVideo.controls = true;
+  //myVideo.autoPlay = true;
+  //myVideo.type = 'video/webm';
+  header.appendChild(myVideo);
   var displaySpellDescription = document.getElementById('showSpellDescription');
   displaySpellDescription.onclick = function() {
     var myPara = document.createElement('p');
