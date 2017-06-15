@@ -2,7 +2,8 @@ console.log("javascript loaded");
 var header = document.querySelector('header');
 var section = document.querySelector('section');
 
-var requestURL2 = 'https://na1.api.riotgames.com/lol/static-data/v3/champions?champListData=spells&dataById=true&api_key=RGAPI-1f6ceaad-7c6d-4b9d-8624-c25b883afa41';
+//var requestURL2 = 'https://na1.api.riotgames.com/lol/static-data/v3/champions?champListData=spells&dataById=true&api_key=RGAPI-1f6ceaad-7c6d-4b9d-8624-c25b883afa41';
+var requestURL2 = 'https://alecsands.github.io/lolVideoCard/champions.json';
 var request2 = new XMLHttpRequest();
 var champList;
 
